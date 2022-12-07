@@ -15,7 +15,7 @@ void func(int x){
     std::cout<<"O Poderoso Chefao"<<std::endl;
         break;
     default:
-    std::cout<<"Nao existem Filmes com essa indicação"<<std::endl;
+    
         break;
     }
     
@@ -24,8 +24,13 @@ void func(int x){
 int main (){
     int estrelas;
     std::cin>>estrelas;
+    if(1<=estrelas && estrelas<=5){
     for( estrelas; estrelas-5 <5;estrelas++){
         func(estrelas);
+    }
+    }
+    else{
+        std::cout<<"Nao existem Filmes com essa indicacao"<<std::endl;
     }
     
     return 0;
