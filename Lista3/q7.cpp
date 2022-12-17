@@ -2,33 +2,35 @@
 #include<iomanip>
 double calculo(double v1,double v2){
     std::cout<<std::setprecision(2)<<std::fixed;
-    double c = v1/v2;
-    std::cout<<"media= "<<c;
-
+    double c = (v1+v2)/2;
+    std::cout<<"media = "<<c<<std::endl;
 }
 int main(){
-    double valor,valor2;
-    
-    std::cin>>valor;
-    bool valido1 = 0<=valor && valor<=10;
-    std::cout<<valido1;
-    bool valido2 = 0<=valor2 && valor2<=10;
-    
-    while(!valor==2){
-        if(valido1){
-            std::cin>>valor2;
-            if(valido2){
-                calculo(valor,valor2);
-                std::cout<<"novo calculo (1-sim 2-nao)"<<std::endl;
-            }
-            else{
-                std::cout<<"nota invalida"<<std::endl;    
-            }
-        }
-        else{
-            std::cout<<"nota invalida"<<std::endl;
-        }
-        std::cin>>valor;
+    bool flag =1;
+    while(flag){
+    float nota1, nota2;
+    std::cin>>nota1;
+    while(!(0<=nota1 && nota1<=10)){
+        std::cout<<"nota invalida"<<std::endl;
+        std::cin>>nota1;
     }
-    return 0;  
+    std::cin>>nota2;
+    while(!(0<=nota2 && nota2<=10)){
+        std::cout<<"nota invalida"<<std::endl;
+        std::cin>>nota2;
+    }
+    calculo(nota1,nota2);
+    bool meudeus = true;
+    while(meudeus){
+        std::cout<<"novo calculo (1-sim 2-nao)"<<std::endl;
+        std::cin>>nota1;
+        if((nota1== 1) ||(nota1==2)){
+            meudeus = false;
+        }
+    }
+    if(nota1 ==2){
+        flag =0;
+    }
+    }
+    return 0;
 }
