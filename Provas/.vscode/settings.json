@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        "ostream": "cpp",
+        "iostream": "cpp",
         "array": "cpp",
         "atomic": "cpp",
         "*.tcc": "cpp",
@@ -35,15 +35,13 @@
         "initializer_list": "cpp",
         "iomanip": "cpp",
         "iosfwd": "cpp",
-        "iostream": "cpp",
         "istream": "cpp",
         "limits": "cpp",
         "new": "cpp",
+        "ostream": "cpp",
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp",
-        "list": "cpp",
-        "string_view": "cpp"
+        "typeinfo": "cpp"
     }
 }
