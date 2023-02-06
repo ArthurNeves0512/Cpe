@@ -14,35 +14,34 @@ Pessoas * cadastrar_pessoas(Pessoas* lista_pessoas){
         std::string palavra;
         int num;
         std::cout<<"Insira o Nome"<<std::endl;
-        std::cin.ignore();
         std::getline(std::cin, palavra);
         (lista_pessoas+i)->nome = palavra;
-        std::cout<<palavra<<std::endl;
-        std::cout<<(*lista_pessoas).nome<<std::endl;
         std::cout<<"Insira a idade"<<std::endl;
         std::cin>>num;
-        std::cin.ignore();
         (lista_pessoas+i)->idade = num;
+        std::cout<<(lista_pessoas+i)->idade;
         std::cout<<"Insira o Status Civil"<<std::endl;
         std::cin.ignore();
         std::getline(std::cin, palavra);
         (lista_pessoas+i)->status = palavra;
-        std::cout<<"Insira o Endereço atual"<<std::endl;
-        std::cin.ignore();
+        std::cout<<"Insira o Endereco atual"<<std::endl;
         std::getline(std::cin, palavra);
         (lista_pessoas+i)->endereco = palavra;
         std::cout<<"Insira o telefone para contato"<<std::endl;
-        std::cin.ignore();
         std::getline(std::cin, palavra);
         (lista_pessoas+i)->telefone = palavra;
-        
     }
-    std::cout<<(*lista_pessoas).nome<<std::endl;
     return lista_pessoas;
  };
+
+bool comp(Pessoas a, Pessoas b){
+        return a.nome<b.nome;
+    }
+
 int main(){ 
     Pessoas lista_pessoas[5] ;
     Pessoas * pointer;
     pointer = cadastrar_pessoas(lista_pessoas);
+    std::sort(lista_pessoas, lista_pessoas+4, std::greater<int>());
     return 0;
 }
